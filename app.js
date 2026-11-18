@@ -1,71 +1,79 @@
 const bag = [];
-const count = document.querySelector(".bag-count");
-const toast = document.querySelector(".cart-toast");
+const bagCounts = document.querySelectorAll(".bag-count");
+const bagButton = document.querySelector(".bag-button");
+const drawer = document.querySelector(".bag-drawer");
+const bagItems = document.querySelector(".bag-items");
+const toast = document.querySelector(".toast");
 let toastTimer;
 
-document.querySelectorAll(".quick-add").forEach((button) =>
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    bag.push({
-      name: button.dataset.name,
-      price: Number(button.dataset.price),
-    });
-    count.textContent = bag.length;
+function renderBag() {
+  bagCounts.forEach((count) => (count.textContent = String(bag.length).padStart(2, "0")));
+  bagItems.innerHTML = bag.length
+    ? bag.map((item) => `<div class="bag-item"><span>${item.name}</span><span>EGP ${item.price.toLocaleString("en-EG")}</span></div>`).join("")
+    : '<p class="bag-empty">Your bag is waiting for something good.</p>';
+}
+
+document.querySelectorAll(".quick-add").forEach((button) => {
+  button.addEventListener("click", () => {
+    bag.push({ name: button.dataset.name, price: Number(button.dataset.price) });
+    renderBag();
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("show"), 1900);
-  }),
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 1800);
+  });
+});
+
+function setBagOpen(open) {
+  drawer.classList.toggle("open", open);
+  document.querySelector(".bag-backdrop").classList.toggle("open", open);
+  drawer.setAttribute("aria-hidden", String(!open));
+  document.body.classList.toggle("drawer-open", open);
+}
+bagButton.addEventListener("click", () => setBagOpen(!drawer.classList.contains("open")));
+document.querySelector(".bag-close").addEventListener("click", () => setBagOpen(false));
+document.querySelector(".bag-backdrop").addEventListener("click", () => setBagOpen(false));
+
+const mobileNav = document.querySelector(".nav-left");
+document.querySelector(".menu-button").addEventListener("click", () => {
+  mobileNav.classList.toggle("open");
+});
+mobileNav.querySelectorAll("a").forEach((link) =>
+  link.addEventListener("click", () => mobileNav.classList.remove("open")),
 );
 
-const cards = [...document.querySelectorAll(".product-card")];
-function filterProducts(category) {
-  document
-    .querySelectorAll(".filter")
-    .forEach((button) =>
-      button.classList.toggle("active", button.dataset.filter === category),
-    );
-  cards.forEach(
-    (card) =>
-      (card.hidden = category !== "all" && card.dataset.category !== category),
-  );
-  document.querySelector(".product-total").textContent = `${cards
-    .filter((card) => !card.hidden)
-    .length.toString()
-    .padStart(2, "0")} PIECES`;
-}
-document
-  .querySelectorAll(".filter")
-  .forEach((button) =>
-    button.addEventListener("click", () =>
-      filterProducts(button.dataset.filter),
-    ),
-  );
-document
-  .querySelectorAll(".main-nav [data-filter]")
-  .forEach((link) =>
-    link.addEventListener("click", () => filterProducts(link.dataset.filter)),
-  );
-
-const nav = document.querySelector(".main-nav");
-document
-  .querySelector(".menu-toggle")
-  .addEventListener("click", () => nav.classList.toggle("open"));
-const searchPanel = document.querySelector(".search-panel");
-document.querySelector(".search-toggle").addEventListener("click", () => {
-  searchPanel.classList.add("open");
-  document.querySelector("#search-input").focus();
+const searchLayer = document.querySelector(".search-layer");
+const searchInput = document.querySelector("#search-input");
+document.querySelector(".search-button").addEventListener("click", () => {
+  searchLayer.classList.add("open");
+  searchLayer.setAttribute("aria-hidden", "false");
+  searchInput.focus();
 });
-document
-  .querySelector(".search-close")
-  .addEventListener("click", () => searchPanel.classList.remove("open"));
+function closeSearch() {
+  searchLayer.classList.remove("open");
+  searchLayer.setAttribute("aria-hidden", "true");
+}
+document.querySelector(".search-close").addEventListener("click", closeSearch);
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && searchInput.value.trim()) {
+    closeSearch();
+    document.querySelector("#new-arrivals").scrollIntoView({ behavior: "smooth" });
+    document.querySelectorAll(".product").forEach((product) => {
+      product.hidden = !product.textContent.toLowerCase().includes(searchInput.value.trim().toLowerCase());
+    });
+  }
+});
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") searchPanel.classList.remove("open");
+  if (event.key === "Escape") {
+    closeSearch();
+    setBagOpen(false);
+    mobileNav.classList.remove("open");
+  }
 });
 
 document.querySelector(".signup").addEventListener("submit", (event) => {
   event.preventDefault();
-  document.querySelector(".signup-message").textContent =
-    "YOU’RE ON THE LIST. TALK SOON.";
+  document.querySelector(".signup-message").textContent = "THANK YOU. YOU'RE ON THE LIST.";
   event.currentTarget.reset();
 });
+
+renderBag();
