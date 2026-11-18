@@ -1,49 +1,252 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f1e9">
-  <title>FORME — Made to move differently</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="announcement"><span>CAIRO, EGYPT · EST. 2024</span><span>FREE SHIPPING ON ORDERS OVER EGP 3,000 <span class="arrow">↗</span></span><span>DROP 04 — AVAILABLE NOW</span></div>
-  <header class="site-header">
-    <button class="icon-button menu-toggle" aria-label="Open menu"><span></span><span></span></button>
-    <nav class="main-nav"><a href="#shop">SHOP ALL</a><a href="#shop" data-filter="tops">TOPS</a><a href="#shop" data-filter="bottoms">BOTTOMS</a><a href="#about">OUR WORLD</a></nav>
-    <a class="wordmark" href="#top">FORME<span>®</span></a>
-    <div class="header-actions"><button class="icon-button search-toggle" aria-label="Search">⌕</button><a class="account-link" href="#about">ACCOUNT</a><button class="bag-button" aria-label="Shopping bag">BAG <span class="bag-count">0</span></button></div>
-  </header>
-  <main id="top">
-    <section class="hero">
-      <div class="hero-image"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-topline"><span>COLLECTION 04 / 26</span><span>30°03' N — 31°14' E</span></div>
-      <div class="hero-copy"><p class="eyebrow">NEW SEASON · NEW SHAPE</p><h1>Made to move<br><em>differently.</em></h1><p class="hero-description">A uniform for wherever the day takes you.<br>Designed in Cairo. Worn everywhere.</p><a href="#shop" class="button button-light">SHOP THE DROP <span>↗</span></a></div>
-      <div class="hero-bottom"><span>01 / 04</span><div class="hero-progress"><i></i></div><span>SCROLL TO EXPLORE ↓</span></div>
-      <div class="hero-stamp">FORME<br>STUDIO<br>2026</div>
-    </section>
-    <div class="ticker" aria-label="Brand message"><div class="ticker-track"><span>GOOD CLOTHES. GOOD ENERGY.</span><b>✳</b><span>MADE FOR THE IN-BETWEEN</span><b>✳</b><span>GOOD CLOTHES. GOOD ENERGY.</span><b>✳</b><span>MADE FOR THE IN-BETWEEN</span><b>✳</b></div></div>
-    <section class="shop-section" id="shop">
-      <div class="section-head"><div><p class="eyebrow">THE CURRENT ROTATION</p><h2>Pieces in <em>motion.</em></h2></div><div class="shop-tools"><span class="product-total">04 PIECES</span><div class="filters"><button class="filter active" data-filter="all">ALL</button><button class="filter" data-filter="tops">TOPS</button><button class="filter" data-filter="bottoms">BOTTOMS</button></div></div></div>
-      <div class="product-grid">
-        <article class="product-card" data-category="tops"><a class="product-image" href="#product" aria-label="View Forme Box Tee"><img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85" alt="Model wearing a relaxed white tee"><span class="product-tag">BESTSELLER</span><button class="quick-add" data-name="FORME BOX TEE" data-price="1250">QUICK ADD <b>+</b></button></a><div class="product-meta"><div><h3>FORME BOX TEE</h3><p>Heavyweight cotton · Chalk</p></div><span>EGP 1,250</span></div><div class="swatches"><i class="swatch chalk"></i><i class="swatch black"></i><i class="swatch olive"></i><span>+2</span></div></article>
-        <article class="product-card" data-category="bottoms"><a class="product-image" href="#product" aria-label="View Easy Utility Trouser"><img src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=900&q=85" alt="Relaxed fit trousers in warm neutral fabric"><span class="product-tag tag-new">JUST IN</span><button class="quick-add" data-name="EASY UTILITY TROUSER" data-price="2450">QUICK ADD <b>+</b></button></a><div class="product-meta"><div><h3>EASY UTILITY TROUSER</h3><p>Washed twill · Sand</p></div><span>EGP 2,450</span></div><div class="swatches"><i class="swatch sand"></i><i class="swatch black"></i></div></article>
-        <article class="product-card" data-category="tops"><a class="product-image" href="#product" aria-label="View Daily Form Shirt"><img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85" alt="Oversized button-up shirt"><button class="quick-add" data-name="DAILY FORM SHIRT" data-price="1950">QUICK ADD <b>+</b></button></a><div class="product-meta"><div><h3>DAILY FORM SHIRT</h3><p>Poplin · Cloud blue</p></div><span>EGP 1,950</span></div><div class="swatches"><i class="swatch blue"></i><i class="swatch chalk"></i><i class="swatch stripe"></i></div></article>
-        <article class="product-card" data-category="bottoms"><a class="product-image" href="#product" aria-label="View After Hours Short"><img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=900&q=85" alt="Everyday relaxed shorts"><span class="product-tag">LOW STOCK</span><button class="quick-add" data-name="AFTER HOURS SHORT" data-price="1650">QUICK ADD <b>+</b></button></a><div class="product-meta"><div><h3>AFTER HOURS SHORT</h3><p>Organic cotton · Ink</p></div><span>EGP 1,650</span></div><div class="swatches"><i class="swatch black"></i><i class="swatch olive"></i></div></article>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f1e9" />
+    <title>FORME — Made to move differently</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="announcement">
+      <span>CAIRO, EGYPT · EST. 2024</span
+      ><span
+        >FREE SHIPPING ON ORDERS OVER EGP 3,000
+        <span class="arrow">↗</span></span
+      ><span>DROP 04 — AVAILABLE NOW</span>
+    </div>
+    <header class="site-header">
+      <button class="icon-button menu-toggle" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="#shop">SHOP ALL</a><a href="#shop" data-filter="tops">TOPS</a
+        ><a href="#shop" data-filter="bottoms">BOTTOMS</a
+        ><a href="#about">OUR WORLD</a>
+      </nav>
+      <a class="wordmark" href="#top">FORME<span>®</span></a>
+      <div class="header-actions">
+        <button class="icon-button search-toggle" aria-label="Search">⌕</button
+        ><a class="account-link" href="#about">ACCOUNT</a
+        ><button class="bag-button" aria-label="Shopping bag">
+          BAG <span class="bag-count">0</span>
+        </button>
       </div>
-      <a class="text-link" href="#shop">VIEW ALL PIECES <span>↗</span></a>
-    </section>
-    <section class="manifesto" id="about"><div class="manifesto-image"></div><div class="manifesto-copy"><p class="eyebrow">A NOTE FROM THE STUDIO</p><h2>Less noise.<br><em>More feeling.</em></h2><p>We make considered pieces for real life. The long way home. The last table at your favourite spot. That plan you almost cancelled.</p><p>Good clothes should feel like you, only more so.</p><a href="#about" class="text-link">GET TO KNOW US <span>↗</span></a><span class="manifesto-mark">F.</span></div></section>
-    <section class="newsletter"><p class="eyebrow">A GOOD THING IN YOUR INBOX</p><h2>First dibs. <em>No noise.</em></h2><p>New drops, studio notes, and the occasional good thing.</p><form class="signup"><label class="visually-hidden" for="email">Email address</label><input id="email" type="email" placeholder="YOUR EMAIL ADDRESS" required><button aria-label="Subscribe">↗</button></form><span class="signup-message" aria-live="polite"></span></section>
-  </main>
-  <footer><a class="wordmark footer-mark" href="#top">FORME<span>®</span></a><span>GOOD CLOTHES. GOOD ENERGY.</span><div><a href="#about">INSTAGRAM ↗</a><a href="#about">CONTACT ↗</a></div><small>© FORME STUDIO 2026</small></footer>
-  <div class="cart-toast" role="status">Added to your bag <span>✓</span></div>
-  <div class="search-panel"><button class="search-close" aria-label="Close search">×</button><label for="search-input">WHAT ARE YOU LOOKING FOR?</label><input id="search-input" type="search" placeholder="Try ‘box tee’"><p>POPULAR: BOX TEE · UTILITY TROUSER · NEW ARRIVALS</p></div>
-  <script src="app.js"></script>
-</body>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-topline">
+          <span>COLLECTION 04 / 26</span><span>30°03' N — 31°14' E</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">NEW SEASON · NEW SHAPE</p>
+          <h1>Made to move<br /><em>differently.</em></h1>
+          <p class="hero-description">
+            A uniform for wherever the day takes you.<br />Designed in Cairo.
+            Worn everywhere.
+          </p>
+          <a href="#shop" class="button button-light"
+            >SHOP THE DROP <span>↗</span></a
+          >
+        </div>
+        <div class="hero-bottom">
+          <span>01 / 04</span>
+          <div class="hero-progress"><i></i></div>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+        <div class="hero-stamp">FORME<br />STUDIO<br />2026</div>
+      </section>
+      <div class="ticker" aria-label="Brand message">
+        <div class="ticker-track">
+          <span>GOOD CLOTHES. GOOD ENERGY.</span><b>✳</b
+          ><span>MADE FOR THE IN-BETWEEN</span><b>✳</b
+          ><span>GOOD CLOTHES. GOOD ENERGY.</span><b>✳</b
+          ><span>MADE FOR THE IN-BETWEEN</span><b>✳</b>
+        </div>
+      </div>
+      <section class="shop-section" id="shop">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">THE CURRENT ROTATION</p>
+            <h2>Pieces in <em>motion.</em></h2>
+          </div>
+          <div class="shop-tools">
+            <span class="product-total">04 PIECES</span>
+            <div class="filters">
+              <button class="filter active" data-filter="all">ALL</button
+              ><button class="filter" data-filter="tops">TOPS</button
+              ><button class="filter" data-filter="bottoms">BOTTOMS</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-grid">
+          <article class="product-card" data-category="tops">
+            <a
+              class="product-image"
+              href="#product"
+              aria-label="View Forme Box Tee"
+              ><img
+                src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=85"
+                alt="Model wearing a relaxed white tee"
+              /><span class="product-tag">BESTSELLER</span
+              ><button
+                class="quick-add"
+                data-name="FORME BOX TEE"
+                data-price="1250"
+              >
+                QUICK ADD <b>+</b>
+              </button></a
+            >
+            <div class="product-meta">
+              <div>
+                <h3>FORME BOX TEE</h3>
+                <p>Heavyweight cotton · Chalk</p>
+              </div>
+              <span>EGP 1,250</span>
+            </div>
+            <div class="swatches">
+              <i class="swatch chalk"></i><i class="swatch black"></i
+              ><i class="swatch olive"></i><span>+2</span>
+            </div>
+          </article>
+          <article class="product-card" data-category="bottoms">
+            <a
+              class="product-image"
+              href="#product"
+              aria-label="View Easy Utility Trouser"
+              ><img
+                src="https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=900&q=85"
+                alt="Relaxed fit trousers in warm neutral fabric"
+              /><span class="product-tag tag-new">JUST IN</span
+              ><button
+                class="quick-add"
+                data-name="EASY UTILITY TROUSER"
+                data-price="2450"
+              >
+                QUICK ADD <b>+</b>
+              </button></a
+            >
+            <div class="product-meta">
+              <div>
+                <h3>EASY UTILITY TROUSER</h3>
+                <p>Washed twill · Sand</p>
+              </div>
+              <span>EGP 2,450</span>
+            </div>
+            <div class="swatches">
+              <i class="swatch sand"></i><i class="swatch black"></i>
+            </div>
+          </article>
+          <article class="product-card" data-category="tops">
+            <a
+              class="product-image"
+              href="#product"
+              aria-label="View Daily Form Shirt"
+              ><img
+                src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=900&q=85"
+                alt="Oversized button-up shirt"
+              /><button
+                class="quick-add"
+                data-name="DAILY FORM SHIRT"
+                data-price="1950"
+              >
+                QUICK ADD <b>+</b>
+              </button></a
+            >
+            <div class="product-meta">
+              <div>
+                <h3>DAILY FORM SHIRT</h3>
+                <p>Poplin · Cloud blue</p>
+              </div>
+              <span>EGP 1,950</span>
+            </div>
+            <div class="swatches">
+              <i class="swatch blue"></i><i class="swatch chalk"></i
+              ><i class="swatch stripe"></i>
+            </div>
+          </article>
+          <article class="product-card" data-category="bottoms">
+            <a
+              class="product-image"
+              href="#product"
+              aria-label="View After Hours Short"
+              ><img
+                src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=900&q=85"
+                alt="Everyday relaxed shorts"
+              /><span class="product-tag">LOW STOCK</span
+              ><button
+                class="quick-add"
+                data-name="AFTER HOURS SHORT"
+                data-price="1650"
+              >
+                QUICK ADD <b>+</b>
+              </button></a
+            >
+            <div class="product-meta">
+              <div>
+                <h3>AFTER HOURS SHORT</h3>
+                <p>Organic cotton · Ink</p>
+              </div>
+              <span>EGP 1,650</span>
+            </div>
+            <div class="swatches">
+              <i class="swatch black"></i><i class="swatch olive"></i>
+            </div>
+          </article>
+        </div>
+        <a class="text-link" href="#shop">VIEW ALL PIECES <span>↗</span></a>
+      </section>
+      <section class="manifesto" id="about">
+        <div class="manifesto-image"></div>
+        <div class="manifesto-copy">
+          <p class="eyebrow">A NOTE FROM THE STUDIO</p>
+          <h2>Less noise.<br /><em>More feeling.</em></h2>
+          <p>
+            We make considered pieces for real life. The long way home. The last
+            table at your favourite spot. That plan you almost cancelled.
+          </p>
+          <p>Good clothes should feel like you, only more so.</p>
+          <a href="#about" class="text-link">GET TO KNOW US <span>↗</span></a
+          ><span class="manifesto-mark">F.</span>
+        </div>
+      </section>
+      <section class="newsletter">
+        <p class="eyebrow">A GOOD THING IN YOUR INBOX</p>
+        <h2>First dibs. <em>No noise.</em></h2>
+        <p>New drops, studio notes, and the occasional good thing.</p>
+        <form class="signup">
+          <label class="visually-hidden" for="email">Email address</label
+          ><input
+            id="email"
+            type="email"
+            placeholder="YOUR EMAIL ADDRESS"
+            required
+          /><button aria-label="Subscribe">↗</button>
+        </form>
+        <span class="signup-message" aria-live="polite"></span>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark footer-mark" href="#top">FORME<span>®</span></a
+      ><span>GOOD CLOTHES. GOOD ENERGY.</span>
+      <div><a href="#about">INSTAGRAM ↗</a><a href="#about">CONTACT ↗</a></div>
+      <small>© FORME STUDIO 2026</small>
+    </footer>
+    <div class="cart-toast" role="status">Added to your bag <span>✓</span></div>
+    <div class="search-panel">
+      <button class="search-close" aria-label="Close search">×</button
+      ><label for="search-input">WHAT ARE YOU LOOKING FOR?</label
+      ><input id="search-input" type="search" placeholder="Try ‘box tee’" />
+      <p>POPULAR: BOX TEE · UTILITY TROUSER · NEW ARRIVALS</p>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
